@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the file'
-                bat 'javac HelloWorld.java'
+                bat 'javac Main.java'
             }
         }
         stage('Test') {
@@ -15,7 +15,7 @@ pipeline {
         stage('Run') {
             steps {
                 echo 'Running the file'
-                bat 'java HelloWorld.java'
+                bat 'java Main.java'
             }
         }
     }
