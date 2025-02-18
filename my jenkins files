@@ -1,20 +1,21 @@
 pipeline {
     agent any
-
     stages {
-        stage('Hello') {
+        stage('Build') {
             steps {
-                echo 'Hello World'
+                echo 'Building the file'
+                bat 'javac HelloWorld.java'
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing in progress'
+                echo 'Testing'
             }
         }
-        stage('Deploy') {
+        stage('Run') {
             steps {
-                echo 'Deploying'
+                echo 'Running the file'
+                bat 'java HelloWorld.java'
             }
         }
     }
